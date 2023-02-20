@@ -1,0 +1,75 @@
+<div style="margin: auto; width: 300px">
+  <h3>Pet from</h3>
+  <form #petForm="ngForm" (ngSubmit)="submit()">
+    <div class="group-control">
+      <label for="name">Name:</label>
+      <input
+        name="name"
+        class="form-control"
+        maxlength="25"
+        placeholder="Enter name"
+        type="text"
+        #inputName="ngModel"
+        [(ngModel)]="model.name"
+        required
+      />
+      <div
+        [hidden]="isAdded || inputName.valid || inputName.pristine"
+        class="alert-danger"
+      >
+        Empty name
+      </div>
+    </div>
+    <div class="group-control">
+      <label for="age">Age:</label>
+      <input
+        name="age"
+        class="form-control"
+        min="1"
+        placeholder="Enter age"
+        type="number"
+        #inputAge="ngModel"
+        [(ngModel)]="model.age"
+      />
+      <div [hidden]="inputAge.valid || inputAge.pristine" class="alert-danger">
+        Age must be positive
+      </div>
+    </div>
+    <div class="group-control">
+      <label for="type">Type:</label>
+      <select
+        name="type"
+        class="form-control"
+        #inputType="ngModel"
+        [(ngModel)]="model.type"
+      >
+        <option *ngFor="let type of types" [value]="type">{{ type }}</option>
+      </select>
+    </div>
+    <div class="group-control">
+      <label for="color">Color:</label>
+      <div *ngFor="let color of colors">
+        <input
+          type="radio"
+          id="color"
+          name="color"
+          [value]="color"
+          #inputColor="ngModel"
+          [(ngModel)]="model.color"
+        />
+        {{ color }}
+      </div>
+    </div>
+    <div>
+      <button
+        type="submit"
+        #submitButton
+        class="form-control"
+        [disabled]="petForm.form.invalid"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+  <div [hidden]="!isAdded">Pet added successfully</div>
+</div>

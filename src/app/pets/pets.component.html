@@ -1,0 +1,9 @@
+<div class="center">
+  <h4>Pets List:</h4>
+  <ul>
+    <li *ngFor="let pet of pets">{{ pet | json }}</li>
+  </ul>
+  <div [hidden]="pets.length">
+    {{ isRequested ? "Loading information from server" : "No pet yet!" }}
+  </div>
+</div>
