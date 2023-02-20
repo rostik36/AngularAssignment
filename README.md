@@ -1,3 +1,10 @@
+# How to run the project
+
+download the project open the your IDE, while you in the project folder run 'npm install' command, after it finishes run `ng serve` and Navigate to `http://localhost:4200/`
+
+
+
+
 # AngularAssignment
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
