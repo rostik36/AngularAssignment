@@ -1,6 +1,6 @@
 # How to run the project
 
-download the project open the your IDE, while you in the project folder run 'npm install' command, after it finishes run `ng serve` and Navigate to `http://localhost:4200/`
+download the project open with your IDE, while you in the project folder run 'npm install' command in the terminal, after it finishes run `ng serve` and Navigate to `http://localhost:4200/`
 
 
 
